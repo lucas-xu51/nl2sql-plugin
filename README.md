@@ -48,3 +48,10 @@ The plugin interface provides the following functionalities:
 
 ```bash
 npm install
+
+### preview
+
+<img width="676" height="378" alt="image" src="https://github.com/user-attachments/assets/d8349514-8136-4d09-a200-1b791d75cbee" />
+
+<img width="676" height="378" alt="image" src="https://github.com/user-attachments/assets/d796ff7b-f0c6-4e94-a366-c0c7306ffae9" />
+
