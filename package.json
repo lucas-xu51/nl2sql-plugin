@@ -1,0 +1,145 @@
+{
+  "name": "nl2sql-extension",
+  "displayName": "NL2SQL - Natural Language to SQL",
+  "description": "Convert natural language queries to SQL statements",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "NL2SQL Extension",
+      "properties": {
+        "nl2sql.useCopilot": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use GitHub Copilot (via VS Code Language Model API) instead of calling the OpenAI API directly. Requires GitHub Copilot to be installed and signed in."
+        },
+        "nl2sql.dailsql.apiUrl": {
+          "type": "string",
+          "default": "http://localhost:8000",
+          "description": "DAIL-SQL API server URL"
+        },
+        "nl2sql.dailsql.timeout": {
+          "type": "number",
+          "default": 300000,
+          "description": "API request timeout in milliseconds"  
+        },
+        "nl2sql.dailsql.model": {
+          "type": "string",
+          "default": "",
+          "description": "LLM model name (e.g., gpt-4, gpt-3.5-turbo). Leave empty to use server default"
+        },
+        "nl2sql.dailsql.temperature": {
+          "type": "number",
+          "default": null,
+          "minimum": 0,
+          "maximum": 2,
+          "description": "LLM temperature (0.0-2.0). Leave empty to use server default"
+        },
+        "nl2sql.dailsql.maxRetries": {
+          "type": "number",
+          "default": null,
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Maximum retry attempts. Leave empty to use server default"
+        },
+        "nl2sql.dailsql.kShot": {
+          "type": "number", 
+          "default": null,
+          "minimum": 0,
+          "maximum": 20,
+          "description": "Number of few-shot examples. Leave empty to use server default"
+        },
+        "nl2sql.dailsql.useSelfConsistency": {
+          "type": "boolean",
+          "default": null,
+          "description": "Enable self-consistency decoding. Leave empty to use server default"
+        },
+        "nl2sql.dailsql.nCandidates": {
+          "type": "number",
+          "default": null,
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Number of candidate SQL queries to generate. Leave empty to use server default"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "nl2sql.convertQuery",
+        "title": "Convert Natural Language to SQL"
+      },
+      {
+        "command": "nl2sql.replaceWithSQL",
+        "title": "Replace with SQL"
+      },
+      {
+        "command": "nl2sql.openPanel",
+        "title": "Open NL2SQL Panel"
+      },
+      {
+        "command": "nl2sql.testDailSqlApi",
+        "title": "Test DAIL-SQL API Connection"
+      },
+      {
+        "command": "nl2sql.uploadDatabase",
+        "title": "Upload SQLite Database to DAIL-SQL"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "nl2sql.convertQuery",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "nl2sql.replaceWithSQL",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "nl2sql.convertQuery"
+        },
+        {
+          "command": "nl2sql.replaceWithSQL"
+        },
+        {
+          "command": "nl2sql.openPanel"
+        },
+        {
+          "command": "nl2sql.testDailSqlApi"
+        },
+        {
+          "command": "nl2sql.uploadDatabase"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.6",
+    "mysql2": "^3.6.5",
+    "axios": "^1.6.0",
+    "form-data": "^4.0.0"
+  }
+}
