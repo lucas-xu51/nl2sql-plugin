@@ -51,6 +51,5 @@ npm install
 
 ### preview
 
-<img width="676" height="378" alt="image" src="https://github.com/user-attachments/assets/afc860e1-f1ba-491f-8a66-f12adf27725e" />
+<img width="1554" height="868" alt="屏幕截图 2026-03-25 192251" src="https://github.com/user-attachments/assets/47498813-4b87-450e-a9a8-b9a2e983733f" />
 
-<img width="676" height="378" alt="image" src="https://github.com/user-attachments/assets/2c0bcabc-cba5-4d94-963a-f9439ed20dc9" />
