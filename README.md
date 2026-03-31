@@ -51,7 +51,6 @@ npm install
 
 ### preview
 
-<img width="676" height="378" alt="image" src="https://github.com/user-attachments/assets/d8349514-8136-4d09-a200-1b791d75cbee" />
+<img width="676" height="378" alt="image" src="https://github.com/user-attachments/assets/afc860e1-f1ba-491f-8a66-f12adf27725e" />
 
-<img width="676" height="378" alt="image" src="https://github.com/user-attachments/assets/d796ff7b-f0c6-4e94-a366-c0c7306ffae9" />
-
+<img width="676" height="378" alt="image" src="https://github.com/user-attachments/assets/2c0bcabc-cba5-4d94-963a-f9439ed20dc9" />
