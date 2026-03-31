@@ -49,6 +49,8 @@ The plugin interface provides the following functionalities:
 ```bash
 npm install
 
-### preview
+---
+
+## preview
 
 
