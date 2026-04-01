@@ -51,6 +51,10 @@ npm install
 
 ---
 
-## preview
+## 🖼️ Preview
 
+### UI Overview
+![Design 1](https://raw.githubusercontent.com/lucas-xu51/nl2sql-plugin/main/image/design1.png)
 
+### Database Detail View
+![Design 2](https://raw.githubusercontent.com/lucas-xu51/nl2sql-plugin/main/image/design2.png)
