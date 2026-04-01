@@ -1,81 +1,92 @@
-## ⚙️ Environment Setup
+# 📝 NL2SQL VSCode Plugin
+
+A user-oriented VSCode plugin for generating SQL queries from natural language (NL2SQL) using DAIL-SQL with few-shot learning and Copilot models.
+
+---
+
+## 🚀 Main Features
+
+The plugin interface provides the following functionalities:
+
+1. **🗄️ Database Engine Selection**  
+   Supports SQLite databases.
+
+2. **📂 Database Selection**  
+   Automatically scans the workspace for SQLite files. Users can also upload their own database files.
+
+3. **🤖 Model Selection**  
+   Supports Copilot models, consistent with GitHub Copilot, enabling users to work in a familiar environment.
+
+4. **⚡ Few-shot Configuration**  
+   Users can configure the number of few-shot examples, including both history and general few-shot. This setting affects prompt token size and SQL accuracy.
+
+5. **💬 Natural Language Query (NLQ) Input**  
+   Enter your natural language queries here as input for SQL generation.
+
+6. **📝 SQL Output**  
+   Displays the generated SQL query. Users can manually edit the output for flexibility.
+
+7. **✅ Execution Result**  
+   Shows the results of executing the SQL query on the selected database to verify correctness.
+
+8. **💾 Few-shot Caching**  
+   Clicking the `Save Few-shot` button stores the current NLQ and SQL output locally for future few-shot construction.
+
+9. **🔍 Database Details**  
+   Clicking the `Database Detail` button switches to a detailed database view, including table structures and sample data, improving schema understanding.
+
+---
+
+## ⚙️ Installation and Setup
 
 ### Prerequisites
 
-- Python 3.8  
-- Conda (recommended)  
-- Java (for CoreNLP)
+- Node.js (v16 or higher)  
+- Visual Studio Code  
 
----
+### Backend Setup (Required)
 
-### Install CoreNLP
+This project depends on the backend service from the following repository:
 
-Download [Stanford CoreNLP](http://nlp.stanford.edu/software/stanford-corenlp-full-2018-10-05.zip)  
-and unzip it to:
+👉 https://github.com/lucas-xu51/DAIL_SQL_Server  
 
-```
-./third_party
-```
-
-Start the CoreNLP server:
-
-```bash
-apt install default-jre
-apt install default-jdk
-cd third_party/stanford-corenlp-full-2018-10-05
-nohup java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer &
-cd ../../
-```
-
----
-
-### Python Environment Setup
-
-```bash
-conda create -n DAIL-SQL python=3.8
-conda activate DAIL-SQL
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-python nltk_downloader.py
-```
-
----
-
-## 🚀 Run Backend API Server
-
-This project provides a backend API service for NL2SQL.
-
-Start the server:
+Clone the repository and start the API server:
 
 ```bash
 python api_server.py
 ```
 
-Make sure the server is running before using the frontend.
+Make sure the backend server is running before launching the frontend.
 
 ---
 
-## 🔗 Frontend Integration
-
-This backend is designed to work with the following frontend project:
-
-👉 https://github.com/lucas-xu51/nl2sql-plugin  
-
-To run the frontend:
+### Install Frontend Dependencies
 
 ```bash
 npm install
-npm run compile
 ```
-
-Then open in VS Code:
-
-- Press `F5` (or `Fn + F5`)
-- Launch in debug mode
 
 ---
 
-## 📌 Notes
+### Compile and Run
 
-- Ensure CoreNLP server is running before starting the API  
-- Backend must be running before frontend sends requests  
+First, compile the project:
+
+```bash
+npm run compile
+```
+
+Then launch the application in Visual Studio Code:
+
+- Press `Fn + F5` (or just `F5` depending on your keyboard)  
+- This will start the app in debug mode
+
+---
+
+## 🖼️ Preview
+
+### UI Overview
+![Design 1](https://raw.githubusercontent.com/lucas-xu51/nl2sql-plugin/main/image/design1.png)
+
+### Database Detail View
+![Design 2](https://raw.githubusercontent.com/lucas-xu51/nl2sql-plugin/main/image/design2.png)
