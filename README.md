@@ -42,12 +42,18 @@ The plugin interface provides the following functionalities:
 ### Prerequisites
 
 - Node.js (v16 or higher)  
-- Visual Studio Code
+- Visual Studio Code  
 
-### Install Dependencies
+### Backend Setup (Required)
+
+This project depends on the backend service from the following repository:
+
+👉 https://github.com/lucas-xu51/DAIL_SQL_Server  
+
+Clone the repository and start the API server:
 
 ```bash
-npm install
+python api_server.py
 ```
 
 ---
