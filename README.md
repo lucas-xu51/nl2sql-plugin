@@ -12,7 +12,7 @@ The plugin interface provides the following functionalities:
    Supports SQLite databases.
 
 2. **📂 Database Selection**  
-   Automatically scans the workspace for SQLite files for selection. Users can also upload their own database files.
+   Automatically scans the workspace for SQLite files. Users can also upload their own database files.
 
 3. **🤖 Model Selection**  
    Supports Copilot models, consistent with GitHub Copilot, enabling users to work in a familiar environment.
