@@ -56,6 +56,31 @@ Clone the repository and start the API server:
 python api_server.py
 ```
 
+Make sure the backend server is running before launching the frontend.
+
+---
+
+### Install Frontend Dependencies
+
+```bash
+npm install
+```
+
+---
+
+### Compile and Run
+
+First, compile the project:
+
+```bash
+npm run compile
+```
+
+Then launch the application in Visual Studio Code:
+
+- Press `Fn + F5` (or just `F5` depending on your keyboard)  
+- This will start the app in debug mode
+
 ---
 
 ## 🖼️ Preview
